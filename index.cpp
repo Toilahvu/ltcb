@@ -23,7 +23,7 @@ int main()
 
     nhapMangChienDich(cd, soChienDich);
 
-    ifstrem ifs(chien_dich.txt, ios::in);//doc file text chien dich
+    ifstream ifs("chien_dich.txt", ios::in);//doc file text chien dich
 
     ifs.close();//dong file text chien_dich
     return 0;
