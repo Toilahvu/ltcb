@@ -30,40 +30,8 @@ int main()
     menu_thaotac(cd, soChienDich);
     return 0;
 }
-void nhapThongTinChienDich(chien_dich &x)
-{
-    cout<<"Nhap ma cua chien dich: ";
-    rewind(stdin);
-    cin.getline(x.ma_chiendich,10);
-
-    cout<<"Nhap ten cua chien dich: ";
-    cin.getline(x.ten_chiendich,20);
-
-    cout<<"Nhap so ngay dien ra chien dich: ";
-    cin>>x.ngay_dienra;
-
-    cout<<"Nhap so luong tinh nguyen vien tham du: ";
-    cin>>x.SL_thanhvien;
-}
-void nhapChienDichFILE(chien_dich a[], int &n)
-{    
-    ifstream ifs("chien_dich.txt", ios::in);
-    ifs.close();
-    do
-    {
-        cout<<"Nhap so luong chien dich: ";
-        cin>>n;
-    }while(n<=0);
-
-    for(int i=0; i<n; i++)
-    {
-        cout<<"Nhap gia tri cua chien dich thu "<<i+1<<":"<<endl;
-        nhapThongTinChienDich(a[i]);
-    }
-}
 void menu_thaotac(chien_dich a[], int n){
-int choice;
-   
+    int choice;
     do
     {
         cout<<"\tMENU\n============================\nChon Chuc Nang Can Thuc Hien:\n0. Ket Thuc.\n1. Nhap Danh Sach Chien Dich Thu Cong.\n2. Nhap Danh Sach Chien Dich Tu File Text.\n3. Xuat Danh Sach Chien Dich.\n4. Tinh Tong So Tinh Nguyen Vien Tham Gia."<<endl;
@@ -97,25 +65,41 @@ int choice;
         }
     } while (choice!=0);
 }
-void nhapChienDichThuCong(chien_dich a[], int &n)
+void nhapThongTinChienDich(chien_dich &x)
 {
-    int cont;
+    cout<<"Nhap ma cua chien dich: ";
+    rewind(stdin);
+    cin.getline(x.ma_chiendich,10);
+
+    cout<<"Nhap ten cua chien dich: ";
+    cin.getline(x.ten_chiendich,20);
+
+    cout<<"Nhap so ngay dien ra chien dich: ";
+    cin>>x.ngay_dienra;
+
+    cout<<"Nhap so luong tinh nguyen vien tham du: ";
+    cin>>x.SL_thanhvien;
+}void nhapChienDichThuCong(chien_dich a[], int &n)
+{ 
     do
     {
-    cout<<"Nhap ma chien dich: ";
-    cin>>a[n].ma_chiendich;
-    cout<<"Nhap ten chien dich: ";
-    cin>>a[n].ten_chiendich;
-    cout<<"Nhap so luong thanh vien tham gia: ";
-    cin>>a[n].SL_thanhvien;
-    cout<<"Nhap so ngay dien ra chien dich: ";
-    cin>>a[n].ngay_dienra;
-    cout<<"Tiep Tuc: 1 , Thoat: 0 ."<<endl;
-    cin>>cont;
-    n++;
-    } while (cont!=0);
-    
+        cout<<"Nhap so luong chien dich: ";
+        cin>>n;
+    }while(n<=0);
+
+    for(int i=0; i<n; i++)
+    {
+        cout<<"Nhap gia tri cua chien dich thu "<<i+1<<":"<<endl;
+        nhapThongTinChienDich(a[i]);
+    }
 }
+void nhapChienDichFILE(chien_dich a[], int &n)
+{    
+    ifstream ifs("chien_dich.txt", ios::in);
+    ifs.close();
+   
+}
+
 void xuatDanhsach(chien_dich a[], int n)
 {
     cout<<"Id Chien Dich\t\t\tTen Chien Dich\t\t\tSo Luong Tinh Nguyen Vien\t\tSo Ngay Dien Ra"<<endl;
