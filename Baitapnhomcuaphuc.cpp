@@ -4,6 +4,7 @@
 #include<time.h>
 #include<cstring>
 #include<fstream>
+#include<cstdlib>
 using namespace std;
 struct chien_dich
 {
@@ -95,8 +96,23 @@ void nhapThongTinChienDich(chien_dich &x)
 }
 void nhapChienDichFILE(chien_dich a[], int &n)
 {    
-    ifstream ifs("chien_dich.txt", ios::in);
-    ifs.close();
+    fflush(stdin);
+    ifstream filegoc("chien_dich.txt", ios::in);
+    filegoc>>setw(5)>>n;
+    if (filegoc.fail())
+    {
+        cout<<"Nhap du lieu that bai do khong mo duoc file!"<<endl;
+    }
+    
+    for (int i = 0; i < n; i++)
+    {
+        filegoc>>setw(10)>>a[i].ma_chiendich;
+        filegoc>>setw(20)>>a[i].ten_chiendich;
+        filegoc>>setw(10)>>a[i].ngay_dienra;
+        filegoc>>setw(10)>>a[i].SL_thanhvien;
+    }
+    
+    filegoc.close();
    
 }
 
