@@ -42,6 +42,8 @@ void menu_thaotac(chien_dich a[], int n){
         cin>>choice;
         switch (choice)
         {
+        case 0:
+            break;
         case 1:
             nhapChienDichThuCong(a, n);//Nguyễn Thiên Phúc
             break;
@@ -144,7 +146,7 @@ void tinhTongSLThanhVien(chien_dich a[],int n)
     {
         TongTV+=a[i].SL_thanhvien;
     }
-    cout<<"Tong Tinh Nguyen Vien Tham Gia Cac Chien Dich La: "<<TongTV;
+    cout<<"Tong Tinh Nguyen Vien Tham Gia Cac Chien Dich La: "<<TongTV<<endl;
 }
 #define SWAP(type,x,y) do{type tmp = x; x = y; y = tmp;}while(0)
 void DanhSachChienDichNhieuThanhVien(chien_dich a[], int n)
@@ -159,7 +161,7 @@ void DanhSachChienDichNhieuThanhVien(chien_dich a[], int n)
         for(int j = i + 1; j < n; j++)
         {
 
-            if (b[i].SL_thanhvien > b[j].SL_thanhvien) 
+            if (b[i].SL_thanhvien < b[j].SL_thanhvien) 
             {
                 SWAP(chien_dich , b[i] ,b[j]); 
             }
@@ -180,7 +182,7 @@ bool kiemtraTangDan(chien_dich a[],int i)
 void kiemtradanhsachtangdan(chien_dich a[],int n)
 {
     int checked;
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < n-1; i++)
     {
         if (kiemtraTangDan(a,i)==false)
         {
@@ -212,7 +214,7 @@ void sapXepGiamDan_SoNgay(chien_dich a[], int n)
         for(int j = i + 1; j < n; j++)
         {
 
-            if (c[i].ngay_dienra > c[j].ngay_dienra) 
+            if (c[i].ngay_dienra < c[j].ngay_dienra) 
             {
                 SWAP(chien_dich , c[i] ,c[j]); 
             }
