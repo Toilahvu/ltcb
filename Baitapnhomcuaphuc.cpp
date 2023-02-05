@@ -118,10 +118,10 @@ void nhapChienDichFILE(chien_dich a[], int &n)
 
 void xuatDanhsach(chien_dich a[], int n)
 {
-    cout<<"Id Chien Dich\t\t\tTen Chien Dich\t\t\tSo Luong Tinh Nguyen Vien\t\tSo Ngay Dien Ra"<<endl;
+    cout<<"Id Chien Dich "<<setw(20)<<"Ten Chien Dich "<<setw(30)<<"So Luong Tinh Nguyen Vien"<<setw(20)<<"So Ngay Dien Ra"<<setw(20)<<endl;
     for (int i = 0; i < n; i++)
     {
-        cout<<a[i].ma_chiendich<<"\t\t\t"<<a[i].ten_chiendich<<"\t\t\t"<<a[i].SL_thanhvien<<"\t\t"<<a[i].ngay_dienra<<endl;
+        cout<<left<<a[i].ma_chiendich<<setw(20)<<a[i].ten_chiendich<<setw(30)<<a[i].SL_thanhvien<<setw(20)<<a[i].ngay_dienra<<setw(20)<<endl;
     }
 
 }
