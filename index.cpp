@@ -23,7 +23,7 @@ int main()
 
     nhapMangChienDich(cd, soChienDich);
 
-    ifstrem ifs(chien_dich.txt, ios::in);//doc file text chien dich
+    ifstream ifs("chien_dich.txt", ios::in);//doc file text chien dich
 
     ifs.close();//dong file text chien_dich
     return 0;
@@ -55,7 +55,7 @@ void nhapMangChienDich(chien_dich a[], int &n)
 
     for(int i=0; i<n; i++)
     {
-        cout<<"Nhap gia tri cua chien dich thu "<<i+1<<":"<<endl;
+        cout<<"\nNhap gia tri cua chien dich thu "<<i+1<<":"<<endl;
         nhapThongTinChienDich(a[i]);
     }
 }
