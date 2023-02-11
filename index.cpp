@@ -55,7 +55,7 @@ void nhapMangChienDich(chien_dich a[], int &n)
 
     for(int i=0; i<n; i++)
     {
-        cout<<"Nhap gia tri cua chien dich thu "<<i+1<<":"<<endl;
+        cout<<"\nNhap gia tri cua chien dich thu "<<i+1<<":"<<endl;
         nhapThongTinChienDich(a[i]);
     }
 }
